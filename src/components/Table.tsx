@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import styled from "styled-components";
 import { sortData } from "./functions";
 import { Data, SortKeys, SortOrder } from "./interface";
+import { SearchFilter } from "./SearchFilter";
 import { SortButton } from "./SortButton";
 
 
@@ -26,6 +27,8 @@ function Table({ goods }: { goods: Data }) {
   }
 
   return (
+    <>
+    <SearchFilter/>
     <StyledTable>
       <thead>
         <tr>
@@ -58,6 +61,7 @@ function Table({ goods }: { goods: Data }) {
         })}
       </tbody>
     </StyledTable>
+    </>
   );
 }
 
