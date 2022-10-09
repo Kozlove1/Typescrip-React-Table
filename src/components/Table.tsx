@@ -6,11 +6,10 @@ import { SortButton } from "./SortButton";
 
 
 function Table({ goods }: { goods: Data }) {
-  const [sortKey, setSortKey] = useState<SortKeys>("date");
+  const [sortKey, setSortKey] = useState<SortKeys>("title");
   const [sortOrder, setSortOrder] = useState<SortOrder>("ascn");
 
   const headers: { key: SortKeys; label: string }[] = [
-    { key: "date", label: "Date" },
     { key: "distance", label: "Distance" },
     { key: "quantity", label: "Quantity" },
     { key: "title", label: "Title" },
@@ -30,6 +29,7 @@ function Table({ goods }: { goods: Data }) {
     <StyledTable>
       <thead>
         <tr>
+          <td>Date</td>
           {headers.map((row) => {
             return (
               <td key={row.key}>

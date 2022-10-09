@@ -2,7 +2,7 @@ import data from '../data.json'
 
 export type Data = typeof data;
 
-export type SortKeys = keyof Data[0];
+export type SortKeys = keyof Omit<Data[0], 'date'>;
 
 export type SortOrder = "ascn" | "desc";
 
